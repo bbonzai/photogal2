@@ -1,0 +1,89 @@
+#### YAML RULES
+# All YAML variables are KEY: VALUE pairs
+# The VALUE can be one of three types:
+# -- a scalar
+# -- an array (each item must be listed on a separate line preceded by a dash.
+# -- an hash (each item must be listed on a separate line not preceded by a dash.
+
+# The name of your site: REQUIRED SETTING
+site_name: Photo History of Lewisboro, NY
+
+# Site description: this adds a META tag to each page header
+site_description: A collection of historical photos from Lewisboro, NY
+
+# Site author: this adds a META tag to each page header
+site_author: BSA Troop 100
+
+site_url: http://localhost/~sgk/temujin1/
+
+validation:
+  links:
+    absolute_links: relative_to_docs
+    anchors: warn
+    unrecognized_links: warn
+
+nav: 
+  - Home: index.md
+  - About: about/index.md
+  # - Gallery Examples: gallery-examples.md
+  - "19th Century": 
+    - 19C/index.md
+    - 19C/daguerreotypes.md
+    - 19C/ambrotypes.md
+    - 19C/tintypes.md
+  - "20th Century": 
+    - 20C/index.md
+    - 20C/turnofcentury.md
+    - 20C/roaringtwenties.md
+    - 20C/depression.md
+    - 20C/postwar.md
+  - "21st Century":
+    - 21C/index.md
+    - 21C/911.md
+    - 21C/anythingelse.md
+
+
+# Configuration details
+theme:
+  name: material
+  palette:
+  # Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  # Light Mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+         icon: material/weather-night
+         name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+# Plugins
+plugins:
+  - search
+  - image-gallery:
+      image_folder: "assets/pics"
+      separate_category_pages: true
+
+# Markdown add-ons you will probably want
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
