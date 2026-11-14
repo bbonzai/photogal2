@@ -1,8 +1,5 @@
 ---
-<!-- Don't bother with a title, bc it will be overridden by 
-     site_name in mkdocs.yml  
 title: Front Page using Markdown
--->
 ---
 # Welcome to our Photo History of Lewisboro, NY
 
